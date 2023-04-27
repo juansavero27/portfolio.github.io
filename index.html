@@ -187,8 +187,8 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
-              <strong>Pesan Anda !</strong> Sudah Kami Terima.
+            <div class="alert alert-warning alert-dismissible fade show d-none my-alert" role="alert">
+              <strong>Terima kasih!</strong> Pesan anda sudah kami terima.
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <form name="WPU-Contact-Form">
@@ -255,7 +255,7 @@
  
     </script>
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbwQC_osoDp_cX1tbIe3FvhddxU6LpNsWiOkntC_KA7OshRm6Nu-AS_n1s1ilseiscg5fQ/exec'
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxnoLFBZUSyoDY3wpKBcEdZnR2HD8bbYd2o7h2ji_Xb7JFTgkG5Nw4GJNQTvPGaKEIz/exec'
       const form = document.forms['WPU-Contact-Form']
       const btnKirim = document.querySelector('.btn-kirim');
       const btnLoading = document.querySelector('.btn-loading');
@@ -268,7 +268,7 @@
         btnLoading.classList.toggle('d-none');
         btnKirim.classList.toggle('d-none');
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response =>{
+          .then((response) => {
             //tampilkan tombol kirim, hilangan tombol loading
             btnLoading.classList.toggle('d-none');
             btnKirim.classList.toggle('d-none');
@@ -278,8 +278,8 @@
             form.reset();
             console.log('Success!', response);
           })
-          .catch(error => console.error('Error!', error.message))
-      })
+          .catch((error) => console.error('Error!', error.message));
+      });
     </script>
   </body>
 </html>
